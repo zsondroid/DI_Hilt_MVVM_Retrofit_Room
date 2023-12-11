@@ -33,9 +33,4 @@ object DatabaseModule {
         return userDB.userDao()
     }
 
-    @Singleton
-    @Provides
-    fun provideUserRepository(userDao: UserDao): RoomRepository {
-        return RoomRepository(userDao)
-    }
 }
