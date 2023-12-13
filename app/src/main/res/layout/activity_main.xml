@@ -4,12 +4,9 @@
 
     <data>
         <variable
-            name="retrofitViewModel"
-            type="com.zsondroid.hiltapplication.viewModel.RetrofitViewModel" />
+            name="mainViewModel"
+            type="com.zsondroid.hiltapplication.viewModel.MainViewModel" />
 
-        <variable
-            name="roomViewModel"
-            type="com.zsondroid.hiltapplication.viewModel.RoomViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,14 +37,14 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:text="@{retrofitViewModel.emojiData.name}"/>
+                    android:text="@{mainViewModel.emojiData.name}"/>
 
                 <Button
                     android:id="@+id/bt_btn_emoji"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:onClick="@{() -> retrofitViewModel.setRandomEmojiData()}"
+                    android:onClick="@{() -> mainViewModel.setRandomEmojiData()}"
                     android:text="Retrofit 으로 데이터 가져오기" />
 
             </LinearLayout>
@@ -66,14 +63,14 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:text="@{roomViewModel.userData.toString()}"/>
+                    android:text="@{mainViewModel.userData.toString()}"/>
 
                 <Button
                     android:id="@+id/bt_btn_room"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:onClick="@{() -> roomViewModel.getAll()}"
+                    android:onClick="@{() -> mainViewModel.getAll()}"
                     android:text="Room 으로 데이터 읽어오기" />
 
             </LinearLayout>
