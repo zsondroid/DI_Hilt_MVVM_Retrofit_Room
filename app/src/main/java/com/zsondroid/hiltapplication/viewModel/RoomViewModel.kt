@@ -16,8 +16,7 @@ import javax.inject.Inject
 class RoomViewModel @Inject constructor(private val repository: RoomRepository) : ViewModel() {
 
     private val _userData = MutableLiveData<List<User>>()
-    val userData: LiveData<List<User>>
-        get() = _userData
+    val userData: LiveData<List<User>> = _userData
 
     fun getAll() {
         viewModelScope.launch(Dispatchers.IO) {

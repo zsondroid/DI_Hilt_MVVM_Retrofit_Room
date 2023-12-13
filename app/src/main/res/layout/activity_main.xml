@@ -39,7 +39,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="@{retrofitViewModel.emojiData.name}"/>
 
                 <Button
                     android:id="@+id/bt_btn_emoji"
@@ -64,7 +65,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="@{roomViewModel.userData.toString()}"/>
 
                 <Button
                     android:id="@+id/bt_btn_room"

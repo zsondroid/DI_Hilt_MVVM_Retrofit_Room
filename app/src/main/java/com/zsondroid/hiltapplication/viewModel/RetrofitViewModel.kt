@@ -16,8 +16,7 @@ import javax.inject.Inject
 class RetrofitViewModel @Inject constructor(private val repository: RetrofitRepository) : ViewModel() {
 
     private val _emojiData = MutableLiveData<Emoji>()
-    val emojiData: LiveData<Emoji>
-        get() = _emojiData
+    val emojiData: LiveData<Emoji> = _emojiData
 
     fun setRandomEmojiData() {
         var resultEmojiData: Emoji

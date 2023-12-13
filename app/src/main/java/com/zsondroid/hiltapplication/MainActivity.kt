@@ -3,8 +3,6 @@ package com.zsondroid.hiltapplication
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import com.zsondroid.hiltapplication.databinding.ActivityMainBinding
 import com.zsondroid.hiltapplication.room.User
 import com.zsondroid.hiltapplication.viewModel.RetrofitViewModel
@@ -20,28 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.lifecycleOwner = this
         binding.retrofitViewModel = retrofitViewModel
         binding.roomViewModel = roomViewModel
 
-        initViewModel()
         addTestUserData()
-    }
-
-    private fun initViewModel() {
-        retrofitViewModel.emojiData.observe(this, Observer {
-            if (it != null) {
-                binding.tvTextEmoji.text = it.name
-            }
-        })
-
-        roomViewModel.userData.observe(this, Observer {
-            if (it != null) {
-                binding.tvTextRoom.text = it.toString()
-            }
-        })
     }
 
     private fun addTestUserData() {
