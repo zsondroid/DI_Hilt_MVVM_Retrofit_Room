@@ -2,17 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="mainViewModel"
-            type="com.zsondroid.hiltapplication.viewModel.MainViewModel" />
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.MainActivity">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,54 +16,56 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:src="@drawable/img_logo_yangju" />
 
-                <TextView
-                    android:id="@+id/tv_text_emoji"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:text="@{mainViewModel.emojiData.name}"/>
-
-                <Button
-                    android:id="@+id/bt_btn_emoji"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:onClick="@{() -> mainViewModel.setRandomEmojiData()}"
-                    android:text="Retrofit 으로 데이터 가져오기" />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_title_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:text="양주시 주차장"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="vertical"
-                android:layout_marginTop="24dp">
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="50dp">
 
-                <TextView
-                    android:id="@+id/tv_text_room"
-                    android:layout_width="wrap_content"
+                <android.widget.Button
+                    android:id="@+id/btn_move_parking_list"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:text="@{mainViewModel.userData.toString()}"/>
+                    android:text="주차장 현황 보기"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_main_button" />
 
-                <Button
-                    android:id="@+id/bt_btn_room"
-                    android:layout_width="wrap_content"
+                <android.widget.Button
+                    android:id="@+id/btn_move_parking_map"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:onClick="@{() -> mainViewModel.getAll()}"
-                    android:text="Room 으로 데이터 읽어오기" />
+                    android:layout_marginTop="36dp"
+                    android:text="지도에서 보기"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_main_button" />
+
+                <android.widget.Button
+                    android:id="@+id/btn_move_parking_star"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:text="즐겨찾는 주차장"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_main_button" />
 
             </LinearLayout>
 

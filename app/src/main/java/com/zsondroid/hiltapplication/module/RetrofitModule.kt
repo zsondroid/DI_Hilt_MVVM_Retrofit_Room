@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
 
-    const val BASE_URL = "https://emojihub.yurace.pro/api/"
+    const val BASE_URL = "https://openapi.gg.go.kr/"
 
     @Singleton
     @Provides
